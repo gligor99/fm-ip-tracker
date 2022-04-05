@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+import Header from "./components/Header";
+import Map from "./components/Map";
+import "./scss/main.scss";
 
 const App = () => {
   return (
-    <div>Hello, World!</div>
-  )
-}
+    <section className="app-container">
+      <Header />
+      <Map />
+    </section>
+  );
+};
 
-export default App
+export default App;
