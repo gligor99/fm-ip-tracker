@@ -5,7 +5,7 @@
 }
 
 .header {
-    height: 30vh;
+    height: 40vh;
     background-image: url('../images/pattern-bg.png');
     background-repeat: no-repeat;
     background-position: center;
@@ -13,15 +13,14 @@
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 
     &__title {
         font-size: 3.5rem;
         font-weight: 500;
         color: #fff;
-        margin-top: 6rem;
-        margin-bottom: 3rem;
+        margin: 2rem 0;
     }
 
     &__input-section {
@@ -29,6 +28,8 @@
         width: 40%;
         display: flex;
         align-items: center;
+        margin-bottom: 2rem;
+        position: relative;
     }
 
     &__input {
@@ -42,7 +43,11 @@
         &::placeholder {
             color: $clr-dark-gray;
             font-size: 1.8rem;
-            font-weight: 700;
+            font-weight: 600;
+        }
+
+        &:focus {
+            outline: none
         }
     }
 
@@ -53,32 +58,44 @@
         height: 100%;
         border-top-right-radius: 2rem;
         border-bottom-right-radius: 2rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        transition: 0.1s ease-in-out;
+
+        &:hover {
+            background-color: $clr-very-dark-gray;
+            cursor: pointer;
+        }
+
+        &:active {
+            background-color: $clr-dark-gray;
+        }
     }
 
     &__details-section {
-        height: 100%;
+        position: absolute;
+        height: min-content;
         width: 70%;
         border-radius: 2rem;
         background-color: #fff;
-        transform: translateY(2rem);
+        transform: translateY(190%);
 
         display: flex;
-        justify-content: space-between;
         align-items: center;
 
         &__item {
-            height: 60%;
             width: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: space-evenly;
             align-items: flex-start;
 
             &:not(:last-child) {
                 border-right: 2px solid $clr-dark-gray;
                 margin: 4rem;
             }
-
 
             h5 {
                 color: $clr-dark-gray;
@@ -87,7 +104,6 @@
             }
 
             h2 {
-
                 font-size: 2rem;
             }
         }
@@ -96,6 +112,6 @@
 
 .map {
     width: 100%;
-    height: 70vh;
+    height: 60vh;
     background-color: tomato;
 }
