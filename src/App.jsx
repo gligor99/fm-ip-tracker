@@ -22,10 +22,15 @@ const App = () => {
   };
 
   useEffect(() => {
-    axios.get(API_KEY).then((response) => {
-      setIpData(response.data);
-      setLoading(false);
-    });
+    axios
+      .get(API_KEY)
+      .then((response) => {
+        setIpData(response.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, [url]);
 
   return (
