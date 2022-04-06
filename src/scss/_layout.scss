@@ -13,6 +13,10 @@
     background-size: cover;
     z-index: 10;
 
+    @media only screen and (max-width: 1200px) {
+        height: 45vh;
+    }
+
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -32,6 +36,10 @@
         align-items: center;
         margin-bottom: 2rem;
         position: relative;
+
+        @media only screen and (max-width: 1200px) {
+            width: 85%;
+        }
     }
 
     &__input {
@@ -41,6 +49,10 @@
         border-top-left-radius: 2rem;
         border-bottom-left-radius: 2rem;
         font-size: 1.8rem;
+
+        @media only screen and (max-width: 450px) {
+            width: 80%;
+        }
 
         &::placeholder {
             color: $clr-dark-gray;
@@ -67,6 +79,10 @@
 
         transition: 0.1s ease-in-out;
 
+        @media only screen and (max-width: 450px) {
+            width: 20%;
+        }
+
         &:hover {
             background-color: $clr-very-dark-gray;
             cursor: pointer;
@@ -85,10 +101,17 @@
         border-radius: 2rem;
         background-color: #fff;
         transform: translateY(50%);
+
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
         display: flex;
         align-items: center;
+
+        @media only screen and (max-width: 1200px) {
+            display: flex;
+            width: 85%;
+            flex-direction: column;
+        }
 
         &--loading {
             position: absolute;
@@ -108,9 +131,19 @@
             flex-direction: column;
             align-items: flex-start;
 
+            @media only screen and (max-width: 1200px) {
+                display: flex;
+                align-items: center;
+            }
+
             &:not(:last-child) {
                 border-right: 2px solid $clr-dark-gray;
                 margin: 4rem;
+
+                @media only screen and (max-width: 1200px) {
+                    margin: 2rem;
+                    border: none;
+                }
             }
 
             h5 {

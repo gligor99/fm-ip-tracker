@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import { MapContainer, Popup, TileLayer, Marker } from "react-leaflet";
 import { PuffLoader } from "react-spinners";
 
