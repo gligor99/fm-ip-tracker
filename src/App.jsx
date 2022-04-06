@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
 import MapComponent from "./components/Map";
@@ -9,7 +10,7 @@ const App = () => {
   const [url, setUrl] = useState("");
   const [ipData, setIpData] = useState([]);
 
-  const API_KEY = `https://geo.ipify.org/api/v2/country?apiKey=at_cZE4uI1EdEKez7BfWmN8Qv0kzJciL&ipAddress=${url}`;
+  const API_KEY = `https://geo.ipify.org/api/v2/country,city?apiKey=at_LVknfdC9IIzFHdASBG6nkeHU59zhI&ipAddress=${url}`;
 
   const handleClick = () => {
     setUrl(input);
@@ -20,20 +21,11 @@ const App = () => {
     setInput(e.target.value);
   };
 
-  const fetchIp = async (url) => {
-    try {
-      setLoading(false);
-      const response = await fetch(url);
-      const data = await response.json();
-      setIpData(data);
-      setLoading(true);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   useEffect(() => {
-    fetchIp(API_KEY);
+    axios.get(API_KEY).then((response) => {
+      setIpData(response.data);
+      setLoading(false);
+    });
   }, [url]);
 
   return (
@@ -44,7 +36,7 @@ const App = () => {
         handleClick={handleClick}
         handleChange={handleChange}
       />
-      <MapComponent />
+      <MapComponent loading={loading} ipData={ipData} />
     </section>
   );
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import { ClipLoader, BounceLoader, PuffLoader } from "react-spinners";
+import { PuffLoader } from "react-spinners";
 import arrowIcon from "../images/icon-arrow.svg";
 
 const Header = ({ handleClick, ipData, handleChange, loading }) => {
@@ -14,11 +14,11 @@ const Header = ({ handleClick, ipData, handleChange, loading }) => {
           onChange={handleChange}
         />
         <button className="header__input-btn" onClick={handleClick}>
-          <img src={arrowIcon} alt="Button Arrow Icon" />
+          <img src={arrowIcon} alt="Arrow Icon" />
         </button>
       </div>
 
-      {loading ? (
+      {!loading ? (
         <div className="header__details-section">
           <div className="header__details-section__item">
             <h5>ip address</h5>
