@@ -13,7 +13,15 @@ const Header = ({ handleClick, ipData, handleChange, loading }) => {
           placeholder="Search for any IP address or domain"
           onChange={handleChange}
         />
-        <button className="header__input-btn" onClick={handleClick}>
+        <button
+          className="header__input-btn"
+          onClick={handleClick}
+          onKeyDown={(event) => {
+            if (event.key === "Enter") {
+              handleClick()
+            }
+          }}
+        >
           <img src={arrowIcon} alt="Arrow Icon" />
         </button>
       </div>
