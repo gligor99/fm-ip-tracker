@@ -10,7 +10,7 @@ const App = () => {
   const [url, setUrl] = useState("");
   const [ipData, setIpData] = useState([]);
 
-  const API_KEY = `https://geo.ipify.org/api/v2/country,city?apiKey=at_LVknfdC9IIzFHdASBG6nkeHU59zhI&ipAddress=${url}`;
+  const API_KEY = `https://geo.ipify.org/api/v2/country,city?apiKey=at_wbRSBkx6JyaotyjLt4DAWSPDWPTwW&ipAddress=${url}`;
 
   const handleClick = () => {
     setUrl(input);

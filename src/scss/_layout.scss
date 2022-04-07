@@ -13,7 +13,7 @@
     background-size: cover;
     z-index: 10;
 
-    @media only screen and (max-width: 1200px) {
+    @media only screen and (max-width: 800px) {
         height: 45vh;
     }
 
@@ -37,7 +37,7 @@
         margin-bottom: 2rem;
         position: relative;
 
-        @media only screen and (max-width: 1200px) {
+        @media only screen and (max-width: 800px) {
             width: 85%;
         }
     }
@@ -107,7 +107,7 @@
         display: flex;
         align-items: center;
 
-        @media only screen and (max-width: 1200px) {
+        @media only screen and (max-width: 800px) {
             display: flex;
             width: 85%;
             flex-direction: column;
@@ -130,17 +130,21 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
+            margin: 4rem;
 
-            @media only screen and (max-width: 1200px) {
+            @media only screen and (max-width: 1000px) {
+                margin: 2rem;
+            }
+
+            @media only screen and (max-width: 800px) {
                 display: flex;
                 align-items: center;
             }
 
             &:not(:last-child) {
                 border-right: 2px solid $clr-dark-gray;
-                margin: 4rem;
 
-                @media only screen and (max-width: 1200px) {
+                @media only screen and (max-width: 800px) {
                     margin: 2rem;
                     border: none;
                 }
